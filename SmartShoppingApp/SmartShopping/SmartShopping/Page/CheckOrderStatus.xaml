@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartShopping.Page.CheckOrderStatus">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="BillDetailsLabel" Text="Bill Details.." FontAttributes="Bold" FontSize="Large"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="42*" />
+                    <ColumnDefinition Width="26*" />
+                    <ColumnDefinition Width="26*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+                <Label  Grid.Column="0" Grid.Row="0" Text="#" HorizontalOptions="CenterAndExpand"/>
+                <Label  Grid.Column="1" Grid.Row="0" Text="Description" HorizontalOptions="FillAndExpand"/>
+                <Label  Grid.Column="2" Grid.Row="0" Text="Quantity" HorizontalOptions="CenterAndExpand"/>
+                <Label  Grid.Column="3" Grid.Row="0" Text="UnitPrice" HorizontalTextAlignment="Center"/>
+                <Label  Grid.Column="4" Grid.Row="0" Text="SellPrice" HorizontalTextAlignment="Center"/>
+               
+                
+            </Grid>
+            <ListView x:Name="ProductsView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*" />
+                                    <ColumnDefinition Width="42*" />
+                                    <ColumnDefinition Width="26*" />
+                                    <ColumnDefinition Width="26*" />
+                                    <ColumnDefinition Width="30*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label  Grid.Column="0" Text="{Binding SerialNo}" HorizontalOptions="CenterAndExpand"/>
+                                <Label  Grid.Column="1" Text="{Binding ProductDescription}" HorizontalOptions="FillAndExpand" />
+                                <Label  Grid.Column="2" Text="{Binding Quantity}" HorizontalOptions="CenterAndExpand"/>
+                                <Label  Grid.Column="3" Text="{Binding UnitPrice}" HorizontalTextAlignment="Center"/>
+                                <Label  Grid.Column="4" Text="{Binding SellPrice}" HorizontalTextAlignment="Center"/>
+                              
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" BackgroundColor="LightGreen" Grid.Column="0" x:Name="Total" Text="Total" />
+                <Label Grid.Row="0" BackgroundColor="LightGreen" Grid.Column="1" FontAttributes="Bold" x:Name="TotalAmount" HorizontalTextAlignment="Center"/>
+            </Grid>
+
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Ok" TextColor="White" Clicked="Button_Clicked"
+                    HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+                <Button Text="Exit" TextColor="White" Clicked="Exit_Button_Clicked"
+                    HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

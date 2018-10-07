@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartShopping.Page.PaymentPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="WhiteSmoke" Padding="50" Spacing="40">
+
+            <Frame BackgroundColor="#BF043055" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Label Text="Select one of the below Payment Options.." HorizontalTextAlignment="Center" TextColor="DarkSeaGreen" FontAttributes="Bold"
+                                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                    <Button Text="Cash Payment" TextColor="White" Clicked="Cash_Pay_Button_Clicked"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+                    <Button Text="Pay Online" TextColor="White" Clicked="Online_Pay_Button_Clicked"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

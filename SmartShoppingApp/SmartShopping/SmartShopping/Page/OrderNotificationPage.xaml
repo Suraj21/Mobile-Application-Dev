@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartShopping.Page.OrderNotificationPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="WhiteSmoke" Padding="50" Spacing="40">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            </Grid>
+            
+            <Frame Grid.Row="0" BackgroundColor="#BF043055" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Label x:Name="OrderNotificationLbl" Text="" HorizontalTextAlignment="Center" TextColor="DarkSeaGreen" FontAttributes="Bold"
+                                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                    <Label x:Name="OrderStatusLbl" Text="" HorizontalTextAlignment="Center"  FontAttributes="Bold"
+                                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Row="1" BackgroundColor="#BF043055" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Button Text="Check Bill" TextColor="White" Clicked="Checked_Button_Clicked"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+                    <Button Text="Download Bill" TextColor="White" Clicked="Button_Clicked"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

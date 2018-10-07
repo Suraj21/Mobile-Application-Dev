@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SmartShopping"
+             x:Class="SmartShopping.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
+            <BoxView HeightRequest="10"/>
+
+            <Label x:Name="SmarShoppingCart" Text="Smart Shopping" HeightRequest="40" FontSize="Medium" FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+
+
+            <Frame BackgroundColor="#BF043055" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Entry x:Name="UserName" Text="{Binding UserName}" Placeholder="Enter Your Name"   
+                           PlaceholderColor="White" HeightRequest="40"
+                           TextColor="White"/>
+                    <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Email"   
+                           PlaceholderColor="White" HeightRequest="40" Keyboard="Email"
+                           TextColor="White"/>
+                    <Entry x:Name="MobNo" Text="{Binding MobileNo}" Placeholder="Mobile No"   
+                           PlaceholderColor="White" HeightRequest="40"    
+                           TextColor="White"/>
+                </StackLayout>
+            </Frame>
+            <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  Clicked="Button_Clicked"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

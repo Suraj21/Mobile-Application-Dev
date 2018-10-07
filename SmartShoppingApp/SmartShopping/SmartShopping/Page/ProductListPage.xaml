@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartShopping.Page.ProductListPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="SelectedProductsLabel" Text="Selected Products Lists.." FontAttributes="Bold" FontSize="Large"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="12*" />
+                    <ColumnDefinition Width="12*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="10*" />
+                </Grid.ColumnDefinitions>
+                <Label  Grid.Column="0" Grid.Row="0" Text="#"/>
+                <Label  Grid.Column="1" Grid.Row="0" Text="Description"/>
+                <Label  Grid.Column="2" Grid.Row="0" Text="UnitPrice"/>
+                <Label  Grid.Column="3" Grid.Row="0" Text="SellPrice"/>
+                <Label  Grid.Column="4" Grid.Row="0" Text="Quantity" HorizontalOptions="CenterAndExpand"/>
+
+            </Grid>
+            <ListView x:Name="ProductsView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*" />
+                                    <ColumnDefinition Width="30*" />
+                                    <ColumnDefinition Width="12*" />
+                                    <ColumnDefinition Width="12*" />
+                                    <ColumnDefinition Width="30*" />
+                                    <ColumnDefinition Width="10*" />
+
+                                </Grid.ColumnDefinitions>
+                                <Label  Grid.Column="0" Text="{Binding SerialNo}"/>
+                                <Label  Grid.Column="1" Text="{Binding ProductDescription}"/>
+                                <Label  Grid.Column="2" Text="{Binding UnitPrice}"/>
+                                <Label  Grid.Column="3" Text="{Binding SellPrice}"/>
+                                <Grid Grid.Column="4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="33*"/>
+                                        <ColumnDefinition Width="33*"/>
+                                        <ColumnDefinition Width="33*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Clicked="Decrement_Button_Clicked" Grid.Column="0" Text="-"/>
+                                    <Label  Grid.Column="1" Text="{Binding Quantity}" HorizontalOptions="CenterAndExpand"/>
+                                    <Button Clicked="Increment_Button_Clicked" Grid.Column="2" Text="+" />
+                                </Grid>
+                                <Button Grid.Column="5" Text="X" Clicked="Delete_Button_Clicked"  />
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" BackgroundColor="LightGreen" Grid.Column="0" x:Name="Total" Text="Total" />
+                <Label Grid.Row="0" BackgroundColor="LightGreen" Grid.Column="1" FontAttributes="Bold" x:Name="TotalAmount" Text=""/>
+            </Grid>
+
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Continue Shopping" TextColor="White" Clicked="Continue_Shopping_Button_Clicked"
+                    HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+                <Button Text="Shopping Done" TextColor="White" Clicked="Shopping_Done_Button_Clicked"
+                    HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

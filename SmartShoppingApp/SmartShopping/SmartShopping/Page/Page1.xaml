@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartShopping.ViewModel.Page.Page1">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="WhiteSmoke" Padding="50" Spacing="40">
+            <Label x:Name="UserNameLbl" Text="" HorizontalTextAlignment="Center" TextColor="OrangeRed" FontAttributes="Bold" />
+            <Frame BackgroundColor="#BF043055" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Label Text="To Start Shopping, Click on the below button to Scan the QR code.." HorizontalTextAlignment="Center" TextColor="DarkSeaGreen" FontAttributes="Bold"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Button Text="Scan QR" TextColor="White" Clicked="Button_Clicked"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+                    <Label x:Name="ResultLbl" Text="{Binding ResultText}" HorizontalTextAlignment="Center" TextColor="DarkSeaGreen" FontAttributes="Bold"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
